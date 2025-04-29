@@ -18,5 +18,3 @@ else()
 endif()
 
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
-
-setup_geode_mod(${PROJECT_NAME} EXTERNALS geode.node-ids:1.12.0)
