@@ -4,7 +4,8 @@ using namespace geode::prelude;
 
 class $modify(GeometryDashMenuLayer, MenuLayer) {
     static void onModify(auto& self) {
-        (void) self.setHookPriority("MenuLayer::init", -2123456789);
+        if (Loader::get()->isModLoaded("flingus.geometry_pride")) (void) self.setHookPriorityAfterPost("MenuLayer::init", "flingus.geometry_pride");
+        else (void) self.setHookPriority("MenuLayer::init", -3998);
     }
 
     void onMainTitle(CCObject* sender) {
