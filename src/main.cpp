@@ -1,9 +1,8 @@
-#include <Geode/modify/MenuLayer.hpp>
+#include <Geode/Geode.hpp>
 
 using namespace geode::prelude;
 
 class $modify(GeometryDashMenuLayer, MenuLayer) {
-public:
     static void onModify(auto& self) {
         (void) self.setHookPriority("MenuLayer::init", -2123456789);
     }
