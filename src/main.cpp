@@ -1,4 +1,4 @@
-#include <Geode/Geode.hpp>
+#include <Geode/modify/MenuLayer.hpp>
 
 using namespace geode::prelude;
 
@@ -21,7 +21,6 @@ class $modify(GeometryDashMenuLayer, MenuLayer) {
         auto main_title_menu = CCMenu::create();
 
         main_title_menu->setID("main-title-menu"_spr);
-        main_title_menu->updateLayout();
         main_title_menu->setPosition(main_title->boundingBox().origin);
 
         auto title_menu_button = CCMenuItemSpriteExtra::create(main_title, this, menu_selector(GeometryDashMenuLayer::onMainTitle));
