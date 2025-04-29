@@ -1,13 +1,6 @@
 {
 	"description": "Makes the game title a clickable button that plays the \"Geometry Dash\" before the drop in dash.",
 	"developer": "sofabeddd",
-	"dependencies": [
-		{
-			"id": "geode.node-ids",
-			"importance": "required",
-			"version": ">=v1.21.0"
-		}
-	],
 	"gd": {
 		"win": "2.2074",
 		"mac": "2.2074",
