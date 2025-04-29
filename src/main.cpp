@@ -18,6 +18,8 @@ class $modify(GeometryDashMenuLayer, MenuLayer) {
 
         auto main_title = getChildByID("main-title");
         if (!main_title) return true;
+        
+        main_title->removeFromParent();
 
         auto main_title_menu = CCMenu::create();
 
@@ -29,8 +31,6 @@ class $modify(GeometryDashMenuLayer, MenuLayer) {
         title_menu_button->setID("main-title");
 
         main_title_menu->addChild(title_menu_button);
-        
-        main_title->removeFromParent();
         addChild(main_title_menu);
 
         return true;
