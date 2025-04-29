@@ -1,4 +1,3 @@
-#include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 
 using namespace geode::prelude;
@@ -6,20 +5,19 @@ using namespace geode::prelude;
 class $modify(GeometryDashMenuLayer, MenuLayer) {
 public:
     static void onModify(auto& self) {
-        (void) self.setHookPriority("MenuLayer::init", -10000);
+        (void) self.setHookPriority("MenuLayer::init", -2123456789);
     }
 
     void onMainTitle(CCObject* sender) {
-        if (typeinfo_cast<CCMenuItemSpriteExtra*>(sender)) {
-            FMODAudioEngine::sharedEngine()->playEffect("geometry-dash.ogg"_spr, 1.f, 1.f, 1.f);
-        }
+        if (!sender || !typeinfo_cast<CCMenuItemSpriteExtra*>(sender)) return;
+        FMODAudioEngine::sharedEngine()->playEffect("geometry-dash.ogg"_spr, 1.f, 1.f, 1.f);
     }
 
     bool init() {
         if (!MenuLayer::init()) return false;
 
         auto main_title = getChildByID("main-title");
-        main_title->removeFromParent();
+        if (!main_title) return true;
 
         auto main_title_menu = CCMenu::create();
 
@@ -32,6 +30,8 @@ public:
         title_menu_button->setID("main-title");
 
         main_title_menu->addChild(title_menu_button);
+        
+        main_title->removeFromParent();
         addChild(main_title_menu);
 
         return true;
